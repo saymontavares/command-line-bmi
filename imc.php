@@ -15,7 +15,7 @@
 
         public function calc() : String
         {
-            $imc = $this->peso / ($this->altura * 2);
+            $imc = $this->peso / ($this->altura * $this->altura);
             if ($imc < 20) {
                 $faixa = "ABAIXO DO PESO";
             } elseif ($imc >= 20 && $imc <= 25) {
@@ -34,5 +34,5 @@
         }
     }
 
-    $imc = new IMC(67, 1.65, "Saymon Good");
+    $imc = new IMC($argv[1], $argv[2], "Saymon Good");
     echo $imc->calc();
